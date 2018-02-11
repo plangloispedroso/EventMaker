@@ -89,12 +89,16 @@ public class SendToContactsActivity extends Activity{
         String number = numberEdit.getText().toString();
         String message;
         Intent intent = getIntent();
-        String place = intent.getStringExtra("place");
+        String eventName = intent.getStringExtra("eventName");
+        String location = intent.getStringExtra("location");
+        String address = intent.getStringExtra("address");
+        String category = intent.getStringExtra("category");
         String time = intent.getStringExtra("time");
         String day = intent.getStringExtra("day");
         String month = intent.getStringExtra("month");
 
-        message = "Location:" +place +" Time: " +time +" Date: " +month +", " +day;
+        message = "Event: " +eventName +" Location: " +location +" Address: " +address +" Category: "
+                +category;
 
         try {
             SmsManager smsManager = SmsManager.getDefault();
