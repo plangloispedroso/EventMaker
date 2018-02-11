@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">EventMaker</string>
+    <string name="email_add">Add Email</string>
+    <string name="event_add">New Event</string>
+    <string name="event_name">Event: </string>
+    <string name="event_category">Category: </string>
+    <string name="event_description">Description: </string>
+    <string name="event_start">Start: </string>
+    <string name="event_end">End: </string>
+    <string name="event_location">Location: </string>
+    <string name="event_address">Address: </string>
+    <string name="app_author4">Philippe Langlois-Pedroso</string>
+    <string name="app_author1">Ali Dali</string>
+    <string name="app_author3">Rhai Hinds</string>
+    <string name="app_author2">Marc-Daniel Dialogo</string>
+    <string name="error_invalid_phone_number">That is an invalid phone number</string>
+    <string name="error_sending_sms">SMS failed, please try again later!</string>
+    <string name="success_sending_sms">SMS Sent Successfully!</string>
+    <string name="send_message_button_text">Send a Message</string>
+    <string name="main_title">Create Events With Your Friends</string>
+    <string name="create_event_button_text">Create an Event</string>
+    <string name="message_being_sent">Message Being Sent:</string>
+    <string name="enter_phone_number">Enter Phone Number:</string>
 </resources>
