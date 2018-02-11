@@ -30,9 +30,9 @@ public class EventFormMaker extends AppCompatActivity
         address = findViewById(R.id.addressET);
 
 
-        if (getIntent().getExtras().containsKey("location_name")) {
-            location.setText(getIntent().getExtras().getString("location_name"));
-            address.setText(getIntent().getExtras().getString("address"));
+        if (getIntent().getExtras().containsKey("name")) {
+            location.setText(getIntent().getExtras().getString("name"));
+            address.setText(getIntent().getExtras().getString("location"));
         }
     }
 
