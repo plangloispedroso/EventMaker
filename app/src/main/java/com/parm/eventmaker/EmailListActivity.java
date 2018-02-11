@@ -26,7 +26,7 @@ public class EmailListActivity extends AppCompatActivity
 
     private ListView emailListView;
 
-    private ArrayAdapter<String> adapter;
+    private  EmailCustomAdapter adapter;
 
     private EditText newEmailEditText;
 
@@ -59,7 +59,7 @@ public class EmailListActivity extends AppCompatActivity
 
     private void updateUI()
     {
-        ArrayList<String> emailList = new ArrayList<>();
+        ArrayList<Email> emailList = new ArrayList<>();
 
         SQLiteDatabase db = emailDBH.getReadableDatabase();
 
@@ -68,20 +68,25 @@ public class EmailListActivity extends AppCompatActivity
         while(cursor.moveToNext())
         {
             int index = cursor.getColumnIndex(emailDBH.COLUMN_EMAIL);
-            emailList.add(cursor.getString(index));
+            int checkIndex = cursor.getColumnIndex(emailDBH.COLUMN_CHECK);
+            //emailList.add(cursor.getString(index));
+
+            String email = cursor.getString(index);
+            int check = cursor.getInt(checkIndex);
+
+            emailList.add(new Email(email, check));
         }
 
-        if(adapter == null)
+        Object[] arr = emailList.toArray();
+        Email[] emailarr = new Email[arr.length];
+        for(int i = 0; i < arr.length; i++)
         {
-            adapter = new ArrayAdapter<String>(this, R.layout.emaillist_row, R.id.emailTextView, emailList);
-            emailListView.setAdapter(adapter);
+            emailarr[i] = (Email)arr[i];
         }
-        else
-        {
-            adapter.clear();
-            adapter.addAll(emailList);
-            adapter.notifyDataSetChanged();
-        }
+
+        adapter = new EmailCustomAdapter(this, emailarr);
+        emailListView.setAdapter(adapter);
+
 
         cursor.close();
         db.close();
@@ -106,4 +111,16 @@ public class EmailListActivity extends AppCompatActivity
         updateUI();
     }
 
+    @Override
+    public void onPause()
+    {
+        for(int i = 0; i < adapter.getCount(); i++)
+        {
+            Email email = (Email)adapter.getItem(i);
+            emailDBH.changeCheckEmail(email.getEmail(), email.getCheck() > 0);
+            System.out.println("iiiii " + i );
+        }
+        System.out.println("helloooo");
+        super.onPause();
+    }
 }
