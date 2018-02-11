@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class SearchActivity extends MenuActivity {
 
     ArrayList<String> names = new ArrayList<>();
+    ArrayList<String> locations = new ArrayList<>();
     ListView listView;
     private static final String TAG = "searchActivity";
     private Context context;
@@ -31,6 +32,7 @@ public class SearchActivity extends MenuActivity {
         Intent mainIntent = getIntent();
 
         names = mainIntent.getStringArrayListExtra("nameList");
+        locations = mainIntent.getStringArrayListExtra("locationList");
 
         for(int i = 0; i<names.size(); i++) {
             Log.i(TAG, names.get(i));
@@ -43,21 +45,21 @@ public class SearchActivity extends MenuActivity {
         listView.setAdapter(adapter);
         adapter.addAll(names);
 
-    }
-
-    public void onDataChange(DataSnapshot dataSnapshot) {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                // Setup the intent to start the QuoteActivity class
-//                Intent intent = new Intent(context, .class);
-//                intent.putExtra("parent", "quote" + Integer.toString(position + 1));
-//                intent.putExtra("cat", categoryNumber);
+                // Setup the intent to start the QuoteActivity class
+                Intent intent = new Intent(context, ChosenOneActivity.class);
+                intent.putExtra("name", names.get(position));
+                intent.putExtra("location", locations.get(position));
 
-               // startActivity(intent);
+                startActivity(intent);
             }
         });
 
+
     }
+
+
 
 }

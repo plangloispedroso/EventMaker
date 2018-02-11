@@ -42,6 +42,7 @@ public class searchEvents extends AppCompatActivity {
     private double lat;
     GPSActivity gps;
     ArrayList<String> names;
+    ArrayList<String> locations;
 
 
     String input;
@@ -54,6 +55,7 @@ public class searchEvents extends AppCompatActivity {
         setContentView(R.layout.activity_searchevents);
         gps = new GPSActivity(this);
         names = new ArrayList<>();
+        locations = new ArrayList<>();
 
     }
 
@@ -157,61 +159,19 @@ public class searchEvents extends AppCompatActivity {
                 for(int i = 0; i<restaurantArray.length(); i++) {
                     JSONObject js = restaurantArray.optJSONObject(i);
                     names.add(js.opt("name").toString());
+                    locations.add(js.opt("formatted_address").toString());
 
                 }
 
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 intent.putExtra("nameList", names);
+                intent.putExtra("locationList", locations);
                 startActivity(intent);
 
 
             } catch (JSONException e) {
                    e.printStackTrace();
             }
-            // try {
-
-//                JSONObject jsonObject = new JSONObject(result.get(1));
-//                JSONArray listJson = jsonObject.getJSONArray("list");
-//                for(int i = 0; i<listJson.length(); i++) {
-//                    JSONObject js = listJson.optJSONObject(i);
-//                    JSONObject jsMain = new JSONObject(js.getString("main"));
-//                    JSONArray weather = js.getJSONArray("weather");
-//                    JSONObject weatherJson = new JSONObject(weather.getString(0));
-//                    JSONObject windJson = new JSONObject(js.getString("wind"));
-//
-//
-//                    if(js.getString("dt_txt").equals(getDate(js))){
-//                        tempList.add(jsMain.getString("temp"));
-//                        weatherList.add(weatherJson.getString("main"));
-//                        minTempList.add(jsMain.getString("temp_min"));
-//                        maxTempList.add(jsMain.getString("temp_max"));
-//                        pressureList.add(jsMain.getString("pressure"));
-//                        seaLevelList.add(jsMain.getString("sea_level"));
-//                        humidityList.add(jsMain.getString("humidity"));
-//                        tempKfList.add(jsMain.getString("temp_kf"));
-//                        windDegreeList.add(windJson.getString("deg"));
-//                        windSpeedList.add(windJson.getString("speed"));
-//                        grndLevelList.add(jsMain.getString("grnd_level"));
-//                    }
-//                }
-//                Intent intent = new Intent(getApplicationContext(), DisplayWeatherActivity.class);
-//                intent.putExtra("tempList", tempList);
-//                intent.putExtra("temp_min", minTempList);
-//                intent.putExtra("temp_max", maxTempList);
-//                intent.putExtra("pressure", pressureList);
-//                intent.putExtra("sea_level", seaLevelList);
-//                intent.putExtra("grnd_level", grndLevelList);
-//                intent.putExtra("humidity", humidityList);
-//                intent.putExtra("temp_kf", tempKfList);
-//                intent.putExtra("weatherList", weatherList);
-//                intent.putExtra("windSpeed", windSpeedList);
-//                intent.putExtra("windDeg", windDegreeList);
-//                intent.putExtra("uvIndex", uv);
-//                startActivity(intent);
-
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
         }
 
     }
