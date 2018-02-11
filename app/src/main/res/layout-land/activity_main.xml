@@ -30,7 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:text="@string/create_event_button_text"
-            android:onClick="navigateSMS"
+            android:onClick="navigateCreate"
             style="@style/ButtonStyle"/>
 
     </LinearLayout>
