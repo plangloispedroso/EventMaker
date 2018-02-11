@@ -21,7 +21,7 @@ public class ItemEvent extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.itemevent);
 
-        fullEventTextView = findViewById(R.id.eventItemTV);
+        fullEventTextView = findViewById(R.id.eventItemTv);
 
         if (getIntent().getExtras().containsKey("event")) {
             String event = getIntent().getStringExtra("event");

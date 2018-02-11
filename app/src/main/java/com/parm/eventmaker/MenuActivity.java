@@ -18,10 +18,10 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-            case MENU_ABOUT:
+            case R.id.MENU_ABOUT:
                 showAbout();
                 return true;
-            case MENU_SEARCH:
+            case R.id.MENU_SEARCH:
                 showSearch();
                 return true;
         }

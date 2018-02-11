@@ -2,7 +2,7 @@
     <string name="app_name">EventMaker</string>
     <string name="email_add">Add Email</string>
     <string name="event_add">New Event</string>
-    <string name="event_name">Event name: </string>
+    <string name="event_name">Event: </string>
     <string name="event_category">Category: </string>
     <string name="event_description">Description: </string>
     <string name="event_start">Start: </string>

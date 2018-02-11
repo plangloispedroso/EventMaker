@@ -13,7 +13,8 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/event_name" />
+            android:text="@string/event_name"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/eventnameET"
@@ -32,13 +33,15 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/event_category" />
+            android:text="@string/event_category"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/categoryET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -51,7 +54,8 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/event_location" />
+            android:text="@string/event_location"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/placeET"
@@ -70,7 +74,8 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/event_address" />
+            android:text="@string/event_address"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/addressET"
@@ -88,7 +93,8 @@
             android:id="@+id/textView3"
             android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:text="@string/event_description" />
+            android:text="@string/event_description"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/descriptionET"
@@ -107,7 +113,8 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/event_start" />
+            android:text="@string/event_start"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/startET"
@@ -126,7 +133,8 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/event_end" />
+            android:text="@string/event_end"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/endET"
