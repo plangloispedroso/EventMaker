@@ -4,5 +4,8 @@
     <string name="app_author1">Ali Dali</string>
     <string name="app_author3">Rhai Hinds</string>
     <string name="app_author2">Marc-Daniel Dialogo</string>
-
+    <string name="error_invalid_phone_number">That is an invalid phone number</string>
+    <string name="error_sending_sms">SMS failed, please try again later!</string>
+    <string name="success_sending_sms">SMS Sent Successfully!</string>
+    <string name="send_message_button_text">Send a Message</string>
 </resources>
