@@ -70,6 +70,10 @@ public class searchEvents extends AppCompatActivity {
         if(gps.canGetLocation()) {
             lat = gps.getLat();
             lon = gps.getLon();
+            Log.i("SEARCHEVENT","_____________________LAT"+ lat);
+            Log.i("SEARCHEVENT","_____________________LLON"+ lon);
+
+
         }
     }
 
@@ -95,7 +99,7 @@ public class searchEvents extends AppCompatActivity {
         EditText ed = findViewById(R.id.category);
         input = ed.getText().toString();
 
-            String searchurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+input+"&location="+ lon + "," + lat +"&radius=10000&key=AIzaSyBEDE6uYrnLceEJbvViKvSXr7L-Jj1nKtg";
+            String searchurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+input+"&location="+ lat + "," + lon +"&radius=10000&key=AIzaSyBEDE6uYrnLceEJbvViKvSXr7L-Jj1nKtg";
 
             if (isConnected()) {
                 new SearchAsyncTask().execute(searchurl);
