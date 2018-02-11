@@ -17,4 +17,6 @@
     <string name="error_sending_sms">SMS failed, please try again later!</string>
     <string name="success_sending_sms">SMS Sent Successfully!</string>
     <string name="send_message_button_text">Send a Message</string>
+    <string name="main_title">Create Events With Your Friends</string>
+    <string name="create_event_button_text">Create an Event</string>
 </resources>
