@@ -3,6 +3,7 @@ package com.parm.eventmaker;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -86,7 +87,14 @@ public class SendToContactsActivity extends Activity{
     public void sendMessage(){
 
         String number = numberEdit.getText().toString();
-        String message = smsText.getText().toString();
+        String message;
+        Intent intent = getIntent();
+        String place = intent.getStringExtra("place");
+        String time = intent.getStringExtra("time");
+        String day = intent.getStringExtra("day");
+        String month = intent.getStringExtra("month");
+
+        message = "Location:" +place +" Time: " +time +" Date: " +month +", " +day;
 
         try {
             SmsManager smsManager = SmsManager.getDefault();
