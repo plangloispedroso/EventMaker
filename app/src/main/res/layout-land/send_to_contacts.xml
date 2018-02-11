@@ -8,24 +8,23 @@
         android:id="@+id/send_contact_phone_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Phone Number : "
+        android:text="@string/enter_phone_number"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/send_contact_phone_edit"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:phoneNumber="true" >
+        android:layout_height="wrap_content">
     </EditText>
 
     <TextView
         android:id="@+id/send_contact_sms_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter SMS Message : "
+        android:text="@string/message_being_sent"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
+    <TextView
         android:id="@+id/send_contact_sms_edit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -38,6 +37,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Send"
-        android:onClick="checkPermissions"/>
+        android:onClick="checkPermissions"
+        style="@style/ButtonStyle"/>
 
 </LinearLayout>

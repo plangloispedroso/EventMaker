@@ -11,6 +11,7 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -23,9 +24,14 @@ public class SendToContactsActivity extends Activity{
 
     Context context;
     Button sendButton;
-    EditText numberEdit, smsEdit;
+    EditText numberEdit;
     String phoneNo, sms;
+    TextView smsText;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +40,9 @@ public class SendToContactsActivity extends Activity{
         context = getApplicationContext();
         sendButton = (Button) findViewById(R.id.send_contact_send_button);
         numberEdit = (EditText) findViewById(R.id.send_contact_phone_edit);
-        smsEdit = (EditText) findViewById(R.id.send_contact_sms_edit);
+        smsText = (TextView) findViewById(R.id.send_contact_sms_edit);
         phoneNo = numberEdit.getText().toString();
-        sms = smsEdit.getText().toString();
+        sms = smsText.getText().toString();
     }
 
     /**
@@ -80,7 +86,7 @@ public class SendToContactsActivity extends Activity{
     public void sendMessage(){
 
         String number = numberEdit.getText().toString();
-        String message = smsEdit.getText().toString();
+        String message = smsText.getText().toString();
 
         try {
             SmsManager smsManager = SmsManager.getDefault();
