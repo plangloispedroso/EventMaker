@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">EventMaker</string>
+    <string name="email_add">Add Email</string>
+    <string name="event_add">New Event</string>
+    <string name="event_name">Event name: </string>
+    <string name="event_category">Category: </string>
+    <string name="event_description">Description: </string>
+    <string name="event_start">Start: </string>
+    <string name="event_end">End: </string>
+    <string name="event_location">Location: </string>
+    <string name="event_address">Address: </string>
     <string name="app_author4">Philippe Langlois-Pedroso</string>
     <string name="app_author1">Ali Dali</string>
     <string name="app_author3">Rhai Hinds</string>
