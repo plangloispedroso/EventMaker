@@ -18,29 +18,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".EmailListActivity"></activity>
         <activity android:name=".searchEvents"></activity>
-        <activity android:name=".EventFormMaker">
-
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SENDTO" />
-                <data android:scheme="mailto" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".EventList">
-
-        </activity>
-        <activity android:name=".SendToContactsActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
+        <activity android:name=".EventFormMaker"></activity>
+        <activity android:name=".EventList"></activity>
+        <activity android:name=".SendToContactsActivity"></activity>
         <activity android:name=".ItemEvent"></activity>
-        <activity android:name=".MenuActivity">
-
-        </activity>
+        <activity android:name=".MenuActivity"></activity>
         <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".ChosenOneActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +32,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ChosenOneActivity"/>
     </application>
 </manifest>

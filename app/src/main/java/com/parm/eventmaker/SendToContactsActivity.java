@@ -44,6 +44,23 @@ public class SendToContactsActivity extends Activity{
         smsText = (TextView) findViewById(R.id.send_contact_sms_edit);
         phoneNo = numberEdit.getText().toString();
         sms = smsText.getText().toString();
+
+        String number = numberEdit.getText().toString();
+        String message;
+        Intent intent = getIntent();
+        String eventName = intent.getStringExtra("eventName");
+        String location = intent.getStringExtra("location");
+        String address = intent.getStringExtra("address");
+        String category = intent.getStringExtra("category");
+        String description = intent.getStringExtra("description");
+        String time = intent.getStringExtra("time");
+        String day = intent.getStringExtra("day");
+        String month = intent.getStringExtra("month");
+
+        message = "Event: " +eventName +" Location: " +location +" Address: " +address +" Category: "
+                +category +" Description: " +description;
+
+        smsText.setText(message);
     }
 
     /**
