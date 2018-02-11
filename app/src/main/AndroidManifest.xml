@@ -22,6 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".searchEvents"></activity>
+        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
+
     </application>
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>

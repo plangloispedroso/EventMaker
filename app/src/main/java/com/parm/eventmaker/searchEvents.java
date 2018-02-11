@@ -157,8 +157,13 @@ public class searchEvents extends AppCompatActivity {
                 for(int i = 0; i<restaurantArray.length(); i++) {
                     JSONObject js = restaurantArray.optJSONObject(i);
                     names.add(js.opt("name").toString());
-                    Log.i(TAG, names.get(i));
+
                 }
+
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra("nameList", names);
+                startActivity(intent);
+
 
             } catch (JSONException e) {
                    e.printStackTrace();
