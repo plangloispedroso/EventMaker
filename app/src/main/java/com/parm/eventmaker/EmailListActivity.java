@@ -118,7 +118,9 @@ public class EmailListActivity extends AppCompatActivity
         {
             Email email = (Email)adapter.getItem(i);
             emailDBH.changeCheckEmail(email.getEmail(), email.getCheck() > 0);
-            System.out.println("iiiii " + i );
+            System.out.println("email " + email.getEmail() );
+            boolean check = email.getCheck() > 0;
+            System.out.println("check " + check );
         }
         System.out.println("helloooo");
         super.onPause();
