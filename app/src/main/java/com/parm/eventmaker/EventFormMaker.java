@@ -1,5 +1,6 @@
 package com.parm.eventmaker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -43,5 +44,18 @@ public class EventFormMaker extends AppCompatActivity
         dbh.insertEvent(name.getText().toString(), description.getText().toString(), category.getText().toString(), start.getText().toString(), end.getText().toString());
 
         super.onBackPressed();
+    }
+
+    public void openSendToContacts(View view)
+    {
+        Intent i = new Intent(EventFormMaker.this, SendToContactsActivity.class);
+        i.putExtra("eventName", name.getText().toString());
+        i.putExtra("location", location.getText().toString());
+        i.putExtra("address", address.getText().toString());
+        i.putExtra("category", category.getText().toString());
+        i.putExtra("description", description.getText().toString());
+        i.putExtra("start", start.getText().toString());
+        i.putExtra("end", end.getText().toString());
+        startActivity(i);
     }
 }
