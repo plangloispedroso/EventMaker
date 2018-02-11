@@ -32,6 +32,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ItemEvent"></activity>
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>
