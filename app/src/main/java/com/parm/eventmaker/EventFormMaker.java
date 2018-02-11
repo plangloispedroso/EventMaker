@@ -14,7 +14,7 @@ import com.parm.eventmaker.sqlite.EventDBHelper;
 public class EventFormMaker extends AppCompatActivity
 {
 
-    EditText name, category, description, start, end;
+    EditText name, category, description, start, end, location, address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,14 @@ public class EventFormMaker extends AppCompatActivity
         description = findViewById(R.id.descriptionET);
         start = findViewById(R.id.startET);
         end = findViewById(R.id.endET);
+        location = findViewById(R.id.placeET);
+        address = findViewById(R.id.addressET);
+
+
+        if (getIntent().getExtras().containsKey("location_name")) {
+            location.setText(getIntent().getExtras().getString("location_name"));
+            address.setText(getIntent().getExtras().getString("address"));
+        }
     }
 
     public void addEvent(View view)

@@ -111,4 +111,16 @@ public class EmailListActivity extends AppCompatActivity
         updateUI();
     }
 
+    @Override
+    public void onPause()
+    {
+        for(int i = 0; i < adapter.getCount(); i++)
+        {
+            Email email = (Email)adapter.getItem(i);
+            emailDBH.changeCheckEmail(email.getEmail(), email.getCheck() > 0);
+            System.out.println("iiiii " + i );
+        }
+        System.out.println("helloooo");
+        super.onPause();
+    }
 }
